@@ -36,7 +36,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addTagBtn = new System.Windows.Forms.Button();
             this.allTagsTextBox = new System.Windows.Forms.TextBox();
             this.tagToAdd = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
@@ -111,15 +111,16 @@
             this.textBox2.Size = new System.Drawing.Size(683, 41);
             this.textBox2.TabIndex = 3;
             // 
-            // button1
+            // addTagBtn
             // 
-            this.button1.Location = new System.Drawing.Point(654, 398);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(274, 53);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add Tag";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addTagBtn.Enabled = false;
+            this.addTagBtn.Location = new System.Drawing.Point(654, 398);
+            this.addTagBtn.Name = "addTagBtn";
+            this.addTagBtn.Size = new System.Drawing.Size(274, 53);
+            this.addTagBtn.TabIndex = 4;
+            this.addTagBtn.Text = "Add Tag";
+            this.addTagBtn.UseVisualStyleBackColor = true;
+            this.addTagBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // allTagsTextBox
             // 
@@ -149,9 +150,9 @@
             // 
             // previewPanel
             // 
-            this.previewPanel.Location = new System.Drawing.Point(0, 199);
+            this.previewPanel.Location = new System.Drawing.Point(18, 199);
             this.previewPanel.Name = "previewPanel";
-            this.previewPanel.Size = new System.Drawing.Size(239, 231);
+            this.previewPanel.Size = new System.Drawing.Size(209, 289);
             this.previewPanel.TabIndex = 7;
             // 
             // panel1
@@ -160,7 +161,7 @@
             this.panel1.Controls.Add(this.searchBtn);
             this.panel1.Controls.Add(this.tagToAdd);
             this.panel1.Controls.Add(this.allTagsTextBox);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.addTagBtn);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.searchBox);
             this.panel1.Controls.Add(this.listView1);
@@ -192,7 +193,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addTagBtn;
         private System.Windows.Forms.TextBox allTagsTextBox;
         private System.Windows.Forms.TextBox tagToAdd;
         private System.Windows.Forms.Button searchBtn;

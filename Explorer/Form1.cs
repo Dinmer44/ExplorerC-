@@ -120,6 +120,7 @@ namespace Explorer
         //By clicking on the node we will see the contents of the folder in the listView
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            addTagBtn.Enabled = false;
             if (e.Node.Nodes.Count > 0)
             {
 
@@ -167,28 +168,9 @@ namespace Explorer
                         //create new file object by the fatcoty (factory design pattern)
                         mf = Factory.CreateMyFile(mf.FI.Extension, fil, ref imageIndex);
                         item.ImageIndex = imageIndex;
-                        try
-                        {
-                            item.Tag = mf;
-                        }
-                        catch (UnauthorizedAccessException)
-                        {
-                            //display a locked folder icon
-                            item.ImageIndex = 1;
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "DirectoryLister",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                           
-                            listView1.Items.Add(item);
-                        }
-
-                    }
+                        item.Tag = mf;
+                        listView1.Items.Add(item);
+                         }
                     
                 }
             }
@@ -198,6 +180,7 @@ namespace Explorer
         //show the inner content of a folder, if file was clicked nothing will happen
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
+            addTagBtn.Enabled = false;
             previewPanel.Controls.Clear();
             
             if (listView1.SelectedItems[0].SubItems.Count>1 && listView1.SelectedItems[0].SubItems[1].Text == "...")
@@ -256,6 +239,7 @@ namespace Explorer
             {
                 currntFile = listView1.SelectedItems[0].Tag as MyFile;
                 previewPanel.Controls.Add(currntFile.showFile());
+                addTagBtn.Enabled = true;
                 foreach (MyTag t in (listView1.SelectedItems[0].Tag as MyFile).MyTagList)
                 {
                     allTagsTextBox.Text += t.Name + ", ";
@@ -271,6 +255,7 @@ namespace Explorer
             MyTag t = new MyTag(tagToAdd.Text);
             currentFolder.MyFileList.FirstOrDefault(f => f.FI.FullName.CompareTo(currntFile.FI.FullName) == 0).onAddTag(t);
             tagToAdd.Clear();
+            addTagBtn.Enabled = false;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
