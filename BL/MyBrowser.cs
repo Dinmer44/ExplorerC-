@@ -98,23 +98,18 @@ namespace BL
                     }
 
                 }
+                catch (DirectoryNotFoundException)
+                {
+
+                }
+
                 catch (UnauthorizedAccessException)
                 {
 
                 }
-               
-
-
-
             }
             return result;
-
-
-
-
-
-
-
+            
 
         }
     }
