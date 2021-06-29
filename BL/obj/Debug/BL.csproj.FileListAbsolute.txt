@@ -1,0 +1,12 @@
+C:\Users\USER\Desktop\Dina\widowsForms\Explorer\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Dina\widowsForms\Explorer\BL\bin\Debug\BL.dll
+C:\Users\USER\Desktop\Dina\widowsForms\Explorer\BL\bin\Debug\BL.pdb
+C:\Users\USER\Desktop\Dina\widowsForms\Explorer\BL\obj\Debug\BL.dll
+C:\Users\USER\Desktop\Dina\widowsForms\Explorer\BL\obj\Debug\BL.pdb
+C:\Users\USER\Desktop\Dina\widowsForms\Explorer\BL\obj\Debug\BL.csprojAssemblyReference.cache
+G:\דינה\Dina\widowsForms\Explorer\BL\bin\Debug\BL.dll
+G:\דינה\Dina\widowsForms\Explorer\BL\bin\Debug\BL.pdb
+G:\דינה\Dina\widowsForms\Explorer\BL\obj\Debug\BL.csprojAssemblyReference.cache
+G:\דינה\Dina\widowsForms\Explorer\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+G:\דינה\Dina\widowsForms\Explorer\BL\obj\Debug\BL.dll
+G:\דינה\Dina\widowsForms\Explorer\BL\obj\Debug\BL.pdb
