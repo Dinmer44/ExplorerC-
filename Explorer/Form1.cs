@@ -233,7 +233,6 @@ namespace Explorer
                     }
                     finally
                     {
-
                         listView1.Items.Add(item);
                         currentFolder.MyFolderList.Add(item.Tag as MyFolder);
                     }

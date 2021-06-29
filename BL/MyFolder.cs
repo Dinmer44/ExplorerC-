@@ -47,23 +47,30 @@ namespace BL
             di = new DirectoryInfo(dir);
             MyFolderList = new List<MyFolder>();
             MyFileList = new List<MyFile>();
-            try
-            {
-                //initialize the folders list
-                string[] dirs = Directory.GetDirectories(di.FullName);
-                if (dirs != null)
-                    foreach (string d in dirs)
-                    {
-                        DirectoryInfo dinfo = new DirectoryInfo(d);
-                        MyFolder mf = new MyFolder(d, true);
-                        myFolderList.Add(mf);
-
-                    }
-            }
-            catch (UnauthorizedAccessException)
+            if (di.Exists)
             {
 
+
+                try
+                {
+                    //initialize the folders list
+
+                    string[] dirs = Directory.GetDirectories(di.FullName);
+                    if (dirs != null)
+                        foreach (string d in dirs)
+                        {
+                            DirectoryInfo dinfo = new DirectoryInfo(d);
+                            MyFolder mf = new MyFolder(d, true);
+                            myFolderList.Add(mf);
+
+                        }
+                }
+                catch (UnauthorizedAccessException)
+                {
+
+                }
             }
+            if(di.Exists)
             try
             {
                 string[] fDirs = Directory.GetFiles(di.FullName);
