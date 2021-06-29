@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-//using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -242,32 +241,11 @@ namespace Explorer
                     MyFile mf = new MyFile(fil);
                     ListViewItem item = new ListViewItem(mf.FI.Name);
                     mf = Factory.CreateMyFile(mf.FI.Extension, fil, ref imageIndex);
-                    
                     item.ImageIndex = imageIndex;
-                    try
-                    {
-                        //keep the directory's full path in the tag for use later
-                        item.Tag = mf;
-
-
-                    }
-                    catch (UnauthorizedAccessException)
-                    {
-                        //display a locked folder icon
-                        item.ImageIndex = 7;
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "DirectoryLister",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }finally
-                    {
-                        listView1.Items.Add(item);
-                      currentFolder.MyFileList.Add(item.Tag as MyFile);
-
-                    }
-
+                    //Save all details about the object in the 'tag' property
+                    item.Tag = mf;
+                    listView1.Items.Add(item);
+                    currentFolder.MyFileList.Add(item.Tag as MyFile);
                 }
                
             }
@@ -276,7 +254,7 @@ namespace Explorer
                 if (listView1.SelectedItems[0].SubItems.Count == 1)
             {
                 currntFile = listView1.SelectedItems[0].Tag as MyFile;
-                Controls.Add(currntFile.showFile());
+                previewPanel.Controls.Add(currntFile.showFile());
                 foreach (MyTag t in (listView1.SelectedItems[0].Tag as MyFile).MyTagList)
                 {
                     allTagsTextBox.Text += t.Name + ", ";
@@ -333,6 +311,11 @@ namespace Explorer
                 }
             });
 
+        }
+
+        private void listView1_MouseLeave(object sender, EventArgs e)
+        {
+            MessageBox.Show("aa");
         }
     }
 }
