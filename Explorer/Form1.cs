@@ -21,6 +21,7 @@ namespace Explorer
         
         private void dirsTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
         {
+            previewPanel.Controls.Clear();
 
             if (e.Node.Nodes.Count > 0)
             {
@@ -197,6 +198,7 @@ namespace Explorer
         //show the inner content of a folder, if file was clicked nothing will happen
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
+            previewPanel.Controls.Clear();
             
             if (listView1.SelectedItems[0].SubItems.Count>1 && listView1.SelectedItems[0].SubItems[1].Text == "...")
             {
@@ -311,11 +313,6 @@ namespace Explorer
                 }
             });
 
-        }
-
-        private void listView1_MouseLeave(object sender, EventArgs e)
-        {
-            MessageBox.Show("aa");
         }
     }
 }

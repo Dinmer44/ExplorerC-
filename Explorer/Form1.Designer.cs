@@ -94,7 +94,6 @@
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
-            this.listView1.MouseLeave += new System.EventHandler(this.listView1_MouseLeave);
             // 
             // searchBox
             // 
